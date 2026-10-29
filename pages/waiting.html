@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3d2c">
+  <title>بانتظار إرفاق وصل التحويل | كبش نجد</title>
+  <meta name="description" content="أكمل طلبك: حوّل المبلغ إلى آيبان كبش نجد، ثم أرفق صورة وصل التحويل لتأكيد الطلب.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header" data-site-header></header>
+
+<main class="section">
+  <div class="container">
+    <div class="status-wrap">
+      <div class="status-icon gold">🏦</div>
+      <span class="eyebrow">الخطوة الأخيرة</span>
+      <h1>بانتظار إرفاق وصل التحويل</h1>
+      <p class="muted">
+        لإكمال طلبك في <b data-brand>كبش نجد</b>، حوّل المبلغ إلى رقم الآيبان أدناه،
+        ثم أرفق صورة <strong>وصل التحويل</strong> واضغط «تأكيد التحويل».
+      </p>
+
+      <!-- بيانات التحويل -->
+      <div class="order-box">
+        <div class="row"><b>رقم الطلب</b><span class="order-ref" data-order-ref>—</span></div>
+        <div class="row"><b>المبلغ المطلوب</b><span style="font-weight:800;color:var(--green-800)" data-amount>—</span></div>
+        <div class="row"><b>البنك</b><span data-bank>—</span></div>
+        <div class="row">
+          <b>رقم الآيبان (IBAN)</b>
+          <span style="display:flex;gap:.5rem;align-items:center">
+            <span class="order-ref" dir="ltr" data-iban>SA0000000000000000000000</span>
+            <button type="button" class="btn btn--ghost btn--sm" data-copy-iban>نسخ</button>
+          </span>
+        </div>
+        <div class="row"><b>اسم المستفيد</b><span data-brand>كبش نجد</span></div>
+      </div>
+
+      <div class="alert alert--warn">
+        <i>📲</i>
+        <span>
+          سيتم إرسال رقم الآيبان أيضاً إلى رقم واتساب المتجر للتوثيق.
+          بعد التحويل أرفق صورة الوصل هنا، ويمكنك إرسالها عبر
+          <a href="https://wa.me/966550000000" data-whatsapp-link target="_blank" rel="noopener noreferrer">واتساب</a>
+          مع رقم الطلب.
+        </span>
+      </div>
+
+      <!-- منطقة إرفاق الوصل -->
+      <div class="panel" style="text-align:start;margin-top:1.4rem">
+        <div class="panel-head">
+          <h2>📎 إرفاق وصل التحويل</h2>
+          <span class="muted" style="font-size:.85rem">صورة أو PDF — حتى 8 ميجابايت</span>
+        </div>
+
+        <div class="upload-zone" data-upload-zone tabindex="0" role="button" aria-label="إرفاق صورة وصل التحويل">
+          <div class="big">📤</div>
+          <b>اضغط لاختيار صورة الوصل أو اسحبها هنا</b>
+          <p>PNG أو JPG أو PDF — سيتم ضغط الصورة تلقائياً لتسريع الإرسال</p>
+        </div>
+        <input type="file" accept="image/*,application/pdf" data-receipt-input hidden>
+
+        <div class="upload-preview" data-upload-preview hidden></div>
+
+        <div class="alert alert--info" style="margin-top:1rem">
+          <i>🔒</i>
+          <span>يُستخدم الوصل للتحقق من الدفع فقط، ويُحفظ بشكل آمن ولا يُشارك مع أي طرف آخر. اقرأ <a href="policy.html#data">سياسة الخصوصية</a>.</span>
+        </div>
+
+        <button type="button" class="btn btn--gold btn--lg btn--block" data-confirm-transfer disabled style="margin-top:1rem">
+          تأكيد التحويل وإكمال الطلب
+        </button>
+
+        <p class="muted center" style="font-size:.85rem;margin-top:.9rem">
+          بعد التأكيد سننقلك إلى صفحة تأكيد الطلب: جارٍ تجهيز الطلبية وسيتم الاتصال بك عند الوصول خلال يوم عمل.
+        </p>
+      </div>
+
+      <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem">
+        <a class="btn btn--ghost" href="tel:+966550000000" data-phone-link>📞 <span data-phone>+966 55 000 0000</span></a>
+        <a class="btn btn--outline" href="../index.html">العودة للرئيسية</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" data-site-footer></footer>
+
+<script type="module" src="../js/waiting.js"></script>
+</body>
+</html>

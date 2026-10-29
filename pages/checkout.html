@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3d2c">
+  <title>سلة المشتريات وإتمام الطلب | كبش نجد</title>
+  <meta name="description" content="أكمل طلبك من كبش نجد: عدّل العدد (حتى 5 رؤوس)، أدخل بيانات التوصيل، واختر الدفع عند الاستلام أو التحويل البنكي.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://kabshnajd.com/pages/checkout.html">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header" data-site-header></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">الرئيسية</a> / سلة المشتريات</div>
+    <h1>سلة المشتريات وإتمام الطلب</h1>
+    <p>راجع طلبك، أكمل بيانات التوصيل، ثم اختر طريقة الدفع</p>
+  </div>
+</section>
+
+<main class="section">
+  <div class="container">
+
+    <!-- سلة فارغة -->
+    <div data-empty-cart hidden class="panel center" style="max-width:560px;margin-inline:auto">
+      <div style="font-size:3rem">🛒</div>
+      <h2>سلتك فارغة</h2>
+      <p class="muted">لم تقم بإضافة أي منتج بعد. عد إلى الصفحة الرئيسية واختر العدد المطلوب.</p>
+      <a class="btn" href="../index.html#product">تصفّح المنتج</a>
+    </div>
+
+    <!-- بوابة تسجيل الدخول -->
+    <div data-auth-gate hidden class="panel" style="max-width:560px;margin:0 auto 1.5rem">
+      <div class="panel-head">
+        <h2>🔐 تسجيل الدخول مطلوب</h2>
+      </div>
+      <p class="muted" data-gate-reason>لتأكيد الطلب نحتاج حساباً موثّقاً. سجّل الدخول بحساب Google ثم أكمل بيانات التوصيل.</p>
+
+      <button type="button" class="google-btn" data-google-signin>
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/>
+          <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+          <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.3-11.3-8l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/>
+          <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.1 5.6l6.2 5.2C37 40.2 44 35 44 24c0-1.3-.1-2.3-.4-3.5z"/>
+        </svg>
+        تسجيل الدخول باستخدام Google
+      </button>
+
+      <div class="alert alert--info" style="margin-top:1rem">
+        <i>ℹ️</i>
+        <span>نجمع بيانات حسابك (الاسم والبريد الإلكتروني) لغرض إتمام الطلب والتواصل معك فقط. لا نشاركها مع أي طرف آخر. اقرأ <a href="policy.html#data">سياسة الخصوصية</a>.</span>
+      </div>
+    </div>
+
+    <!-- محتوى الطلب -->
+    <div data-checkout-content hidden>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:1rem" data-user-chip hidden></div>
+
+      <form data-checkout-form novalidate>
+        <div class="cart-grid">
+          <!-- العمود الرئيسي -->
+          <div>
+            <!-- ملخص السلة -->
+            <div class="panel">
+              <div class="panel-head">
+                <h2>🛒 سلتك (<span data-summary-qty>١</span>)</h2>
+                <button type="button" class="btn btn--ghost btn--sm" data-remove-item>إزالة المنتج</button>
+              </div>
+              <div data-summary-body></div>
+
+              <div class="buy-box" style="margin-top:1rem">
+                <div class="row">
+                  <span class="label">تعديل العدد (الحد الأقصى <b data-max-qty>٥</b> رؤوس)</span>
+                  <div class="qty" role="group" aria-label="تعديل عدد الرؤوس">
+                    <button type="button" data-cart-minus aria-label="تقليل العدد">−</button>
+                    <span class="val" data-cart-qty aria-live="polite">١</span>
+                    <button type="button" data-cart-plus aria-label="زيادة العدد">+</button>
+                  </div>
+                </div>
+                <p class="qty-limit" data-cart-limit hidden>⚠️ لا يمكن طلب أكثر من <b data-max-qty>٥</b> رؤوس لكل عميل.</p>
+              </div>
+            </div>
+
+            <!-- بيانات التوصيل -->
+            <div class="panel">
+              <div class="panel-head"><h2>🚚 بيانات التوصيل</h2></div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="name">الاسم الكامل <span class="hint">(مطلوب)</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="مثال: عبدالله محمد" required>
+                  <div class="error-msg"></div>
+                </div>
+                <div class="field">
+                  <label for="phone">رقم الجوال للتواصل <span class="hint">(مطلوب)</span></label>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" dir="ltr" autocomplete="tel" placeholder="05xxxxxxxx" required>
+                  <div class="error-msg"></div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="email">البريد الإلكتروني <span class="hint">(اختياري)</span></label>
+                <input id="email" name="email" type="email" dir="ltr" autocomplete="email" placeholder="you@example.com">
+                <div class="error-msg"></div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="city">المدينة <span class="hint">(مطلوب)</span></label>
+                  <select id="city" name="city" required>
+                    <option value="">اختر المدينة</option>
+                    <option>الرياض</option>
+                    <option>جدة</option>
+                    <option>مكة المكرمة</option>
+                    <option>المدينة المنورة</option>
+                    <option>الدمام</option>
+                    <option>الخبر</option>
+                    <option>الظهران</option>
+                    <option>الأحساء</option>
+                    <option>الطائف</option>
+                    <option>بريدة</option>
+                    <option>عنيزة</option>
+                    <option>حائل</option>
+                    <option>تبوك</option>
+                    <option>أبها</option>
+                    <option>خميس مشيط</option>
+                    <option>جيزان</option>
+                    <option>نجران</option>
+                    <option>الجبيل</option>
+                    <option>ينبع</option>
+                    <option>القطيف</option>
+                    <option>مدينة أخرى</option>
+                  </select>
+                  <div class="error-msg"></div>
+                </div>
+                <div class="field">
+                  <label for="district">الحي <span class="hint">(اختياري)</span></label>
+                  <input id="district" name="district" type="text" placeholder="مثال: حي الياسمين">
+                  <div class="error-msg"></div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="address">العنوان بالتفصيل <span class="hint">(مطلوب — الحي، الشارع، رقم المبنى، أقرب معلم)</span></label>
+                <textarea id="address" name="address" rows="3" placeholder="مثال: حي الياسمين، شارع الأمير سلطان، مبنى 12، مقابل مسجد..." required></textarea>
+                <div class="error-msg"></div>
+              </div>
+
+              <div class="field">
+                <label for="notes">ملاحظات على الطلب <span class="hint">(اختياري)</span></label>
+                <textarea id="notes" name="notes" rows="2" placeholder="أي تفاصيل إضافية مثل وقت التوصيل المناسب أو طريقة التقطيع المفضلة"></textarea>
+                <div class="error-msg"></div>
+              </div>
+            </div>
+
+            <!-- طريقة الدفع -->
+            <div class="panel">
+              <div class="panel-head"><h2>💳 طريقة الدفع</h2></div>
+
+              <div class="pay-options">
+                <label class="pay-option selected">
+                  <input type="radio" name="payment" value="cash" checked>
+                  <span>
+                    <strong>الدفع عند الاستلام (نقداً)</strong>
+                    <span>ادفع نقداً للمندوب عند وصول الطلب. سنؤكد طلبك ونتصل بك قبل الوصول.</span>
+                  </span>
+                </label>
+
+                <label class="pay-option">
+                  <input type="radio" name="payment" value="transfer">
+                  <span>
+                    <strong>الدفع الآن (تحويل بنكي)</strong>
+                    <span>نرسل لك رقم الآيبان عبر واتساب، ثم تُرفق صورة وصل التحويل لتأكيد الطلب.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="alert alert--danger" data-payment-error hidden><i>⚠️</i><span>الرجاء اختيار طريقة الدفع.</span></div>
+
+              <div class="alert alert--warn" data-pay-info hidden>
+                <i>💡</i>
+                <span>
+                  عند اختيار الدفع الآن: سيتم تحويلك إلى صفحة الانتظار التي تعرض رقم الآيبان،
+                  وسيُرسل لك رقم الآيبان أيضاً عبر واتساب. يجب إرفاق صورة <b>وصل التحويل</b> لتأكيد الطلب.
+                </span>
+              </div>
+
+              <div class="alert alert--info">
+                <i>🔒</i>
+                <span>بيانات الدفع لا تُحفظ على الموقع. التحويل يتم عبر قنواتك البنكية الرسمية، ونستخدم بياناتك للتواصل وتنفيذ الطلب فقط.</span>
+              </div>
+            </div>
+
+            <!-- الموافقة والإرسال -->
+            <div class="panel">
+              <div class="field" style="display:flex;gap:.6rem;align-items:flex-start">
+                <input id="terms" name="terms" type="checkbox" style="width:20px;height:20px;margin-top:.3rem;accent-color:var(--green-700)" required>
+                <label for="terms" style="font-weight:600;margin:0">
+                  أوافق على <a href="terms.html" target="_blank" rel="noopener">الشروط والأحكام</a> و
+                  <a href="policy.html" target="_blank" rel="noopener">سياسة الخصوصية</a>، وأتعهد بصحة بيانات التوصيل.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn--gold btn--lg btn--block" data-submit-order>
+                <span data-submit-label>تأكيد الطلب — الدفع عند الاستلام</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- عمود الملخص -->
+          <div class="summary-col">
+            <div class="panel" style="position:sticky;top:calc(var(--header-h) + 1rem)">
+              <div class="panel-head"><h2>ملخص الطلب</h2></div>
+              <div data-summary-lines></div>
+
+              <div class="alert alert--info" style="margin-top:1rem">
+                <i>📞</i>
+                <span>سنتواصل معك على رقم الجوال للتأكيد قبل التجهيز. تأكد من صحة الرقم.</span>
+              </div>
+
+              <ul class="specs" style="margin-top:1rem">
+                <li><b>مدة التوصيل</b><span data-delivery-time>خلال يوم عمل واحد</span></li>
+                <li><b>الحد الأقصى</b><span><span data-max-qty>٥</span> رؤوس لكل عميل</span></li>
+                <li><b>التغليف</b><span>مبرد وآمن</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer" data-site-footer></footer>
+
+<script type="module" src="../js/checkout.js"></script>
+</body>
+</html>
